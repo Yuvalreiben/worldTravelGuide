@@ -1,0 +1,430 @@
+/* צבעים לפי פלטת האתר */
+:root {
+    --text-main: #2E2910;
+    --cream: #FFFCE1;
+    --pastel-blue: rgb(253 172 172 / 0.3);
+    --pastel-peach: #FDACAC;
+    --pastel-pink: #F9B2D7;
+    --sage-green: rgb(253 172 172 / 0.4);
+    --white: #ffffff;
+    --accent-orange: #f8d7da;
+}
+
+/* גדלי טקסטים והגדרות עיצוב */
+body {
+    direction: rtl;
+    background-color: rgb(250 225 208 / 0.4);
+    color: var(--text-main);
+    font-family: 'Heebo', sans-serif;
+    line-height: 1.6;
+}
+
+#container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+h1, h2, h3 {
+    font-family: 'Assistant', sans-serif;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 16px;
+    display: inline;
+}
+
+p {
+    font-size: 16px;
+}
+
+label, input, button {
+    font-size: 14px;
+}
+
+.breadcrumb, footer {
+    font-size: 12px;
+}
+
+/* תפריט ניווט */
+.main-nav {
+    width: 100%;
+    border: 1px solid var(--text-main);
+    margin-top: 20px;
+}
+
+.main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+}
+
+.main-nav li {
+    flex: 1;
+    text-align: center;
+    border-left: 1px solid var(--text-main);
+}
+
+.main-nav li:last-child {
+    border-left: none;
+}
+
+.main-nav a {
+    display: block;
+    padding: 16px 10px;
+    text-decoration: none;
+    font-family: 'Assistant', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text-main);
+    background-color: rgb(253 172 172 / 0.45);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.main-nav a:hover {
+    background-color: rgb(253 172 172);
+}
+
+.main-nav a.active {
+    background-color: var(--text-main);
+    color: var(--cream);
+}
+
+.main-nav a.active:hover {
+    background-color: var(--text-main);
+    cursor: default;
+}
+
+/* פוטר האתר */
+footer {
+    margin-top: 60px;
+    padding: 25px 0 20px 0;
+    border-top: 1px solid rgba(46, 41, 16, 0.2);
+    text-align: center;
+    font-size: 14px;
+}
+
+footer nav.site-footer > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+footer nav.site-footer li {
+    display: inline-flex;
+    align-items: center;
+}
+
+footer nav.site-footer li:not(:last-child)::after {
+    content: "|";
+    margin-right: 12px;
+    color: rgba(46, 41, 16, 0.4);
+}
+
+footer nav.site-footer a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 4px 6px;
+    border-radius: 4px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+footer nav.site-footer a:hover {
+    color: var(--text-main);
+    background-color: rgb(253 172 172 / 0.5);
+    text-decoration: underline;
+}
+
+/* יעדים בעמוד הבית */
+.destinations-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.dest-card {
+    flex: 1 1 calc(50% - 20px);
+    min-width: 280px;
+    background-color: var(--white);
+    border: 1px solid #e2dec9;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.destination-item h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.destination-item p {
+    margin-bottom: 8px;
+}
+
+.dest-link {
+    color: #0000ee;
+    font-weight: bold;
+    text-decoration: underline;
+    display: inline-block;
+}
+
+.dest-link:hover {
+    color: #000000;
+}
+
+/* תמונות בעמוד הבית */
+.photos {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* המדריך למטייל באיטליה */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0 35px 0;
+    background-color: rgb(253 172 172 / 0.3);
+}
+
+.info-table th, .info-table td {
+    border: 1px solid #000;
+    padding: 12px;
+    vertical-align: top;
+    text-align: center;
+    font-size: 14px;
+}
+
+.info-table th {
+    font-weight: bold;
+}
+
+.table-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.attractions-list {
+    list-style-type: disc;
+    padding-right: 25px;
+}
+
+.attractions-list li {
+    margin-bottom: 20px;
+}
+
+.attractions-list p {
+    margin-top: 6px;
+}
+
+.tips-list {
+    margin-top: 20px;
+}
+
+.Video-section {
+    margin-top: 40px;
+}
+
+.italy-video {
+    margin-top: 6px;
+}
+
+/* עיצוב כפתורים */
+button, .btn {
+    background-color: var(--sage-green);
+    color: var(--text-main);
+    border: 1px solid rgb(104 74 74 / 0.3);
+    padding: 10px 24px;
+    font-family: 'Assistant', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+button:hover, .btn:hover {
+    background-color: rgb(198 79 79 / 0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* עיצוב טבלאות */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: var(--white);
+}
+
+th {
+    border: 1px solid #dcd6a8;
+    padding: 12px 15px;
+    text-align: right;
+}
+
+td {
+    border: 1px solid #dcd6a8;
+    padding: 12px 15px;
+    text-align: right;
+    background-color: #fadddd;
+}
+
+th {
+    background-color: var(--sage-green);
+    font-family: 'Assistant', sans-serif;
+    font-weight: 700;
+}
+
+table tr:nth-child td {
+    background-color: #FFFDF4;
+}
+
+/* מפת אתר */
+.site-map-title {
+    text-align: center;
+}
+
+.sitemap-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.sitemap-col {
+    background-color: #FFFDF4;
+    border: 1px solid #dcd6a8;
+    border-radius: 12px;
+    padding: 25px 20px;
+    flex: 1;
+    min-width: 220px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.sitemap-col:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    background-color: rgb(253 172 172 / 0.3);
+}
+
+.sitemap-col h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--text-main);
+    padding-bottom: 8px;
+}
+
+.sitemap-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sitemap-col li {
+    margin-bottom: 10px;
+}
+
+.sitemap-col a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.sitemap-col a:hover {
+    color: #d9534f;
+    text-decoration: underline;
+}
+
+/* טופס צור קשר */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #dcd6a8;
+    border-radius: 6px;
+    font-family: 'Heebo', sans-serif;
+    background-color: #FFFDF4;
+}
+
+.required {
+    color: #d9534f;
+}
+
+.form-message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    display: none;
+}
+
+.form-message.success {
+    background-color: var(--sage-green);
+    color: var(--text-main);
+}
+
+.form-message.error {
+    background-color: var(--accent-orange);
+    color: var(--text-main);
+}
+
+/* פירורי לחם */
+.breadcrumb {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #777;
+}
+
+.breadcrumb a {
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    color: #555;
+    font-weight: bold;
+}
