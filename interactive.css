@@ -1,0 +1,229 @@
+﻿/* עיצוב כללי בסיסי */
+body {
+    font-family: 'Assistant', sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+
+.mainNav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.mainNav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.mainNav a.active,
+.mainNav a:hover {
+    text-decoration: underline;
+}
+
+/* מיכל ראשי וטופס */
+.mainContainer {
+    padding: 20px;
+}
+
+.tripForm {
+    max-width: 650px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.tripForm h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.formGroup {
+    margin-bottom: 25px;
+}
+
+.formGroup label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.required {
+    color: red;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* כפתורי רדיו ותמונת יעד */
+.radioOptions label {
+    display: inline-block;
+    margin-left: 15px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.destinationPreviewContainer {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.destinationPreviewContainer img {
+    max-width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* גריד אטרקציות וכרטיסים */
+.attractionsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.attractionCard label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    font-weight: normal;
+    border: 1px solid #e0e0e0;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.attractionCard label:hover {
+    background-color: #f0f7ff;
+    border-color: #007bff;
+}
+
+/* תמונות אטרקציה במצב התחלתי (שקיפות חלקית) */
+.attractionImg.dimmed {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    opacity: 0.35;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* תמונות אטרקציה במצב מודגש */
+.attractionImg.active {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    opacity: 1;
+    transform: scale(1.03);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.attractionCard span {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* כפתור שליחה */
+#submitBtn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submitBtn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* מחלקת הסתרה */
+.hidden {
+    display: none !important;
+}
+
+/* חלון מודאל / הודעת סיכום */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#modalOkBtn {
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#modal-ok-btn {
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+input, select, textarea, button, label {
+    font-family: 'Assistant', sans-serif;
+}

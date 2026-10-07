@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+
+    <title>בנה את חבילת הטיול המושלמת שלך</title>
+
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/myStyle.css">
+    <link rel="stylesheet" href="styles/interactive.css">
+
+    <link rel="icon" type="image/svg+xml" href="Images/travel-svg.svg" />
+</head>
+<body>
+
+<header>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">דף הבית</a></li>
+            <li><a href="Italy.html">דרום איטליה</a></li>
+            <li><a href="thailand.html">תאילנד</a></li>
+            <li><a href="about.html">אודות</a></li>
+            <li><a href="contactUs.html">צור קשר</a></li>
+            <li><a href="sitemap.html">מפת האתר</a></li>
+            <li><a href="interactive.html" class="active">טיול בהתאמה</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="mainContainer">
+    <form id="tripPlannerForm" class="tripForm" onsubmit="handleSubmit(event)">
+        <h2>בנה את חבילת הטיול המושלמת שלך</h2>
+
+        <div class="formGroup">
+            <label for="travelerName">שם המטייל: <span class="required">*</span></label>
+            <input type="text" id="travelerName" name="travelerName" placeholder="לדוגמה: ליאם" oninput="checkFormValidity()" required>
+        </div>
+
+        <div class="formGroup">
+            <label>בחר יעד לטיול: <span class="required">*</span></label>
+            <div class="radioOptions">
+                <label>
+                    <input type="radio" name="destination" value="דרום איטליה" onchange="handleDestinationChange(this)">
+                    דרום איטליה
+                </label>
+                <label>
+                    <input type="radio" name="destination" value="תאילנד" onchange="handleDestinationChange(this)">
+                    תאילנד
+                </label>
+                <label>
+                    <input type="radio" name="destination" value="יוון" onchange="handleDestinationChange(this)">
+                    יוון
+                </label>
+                <label>
+                    <input type="radio" name="destination" value="יפן" onchange="handleDestinationChange(this)">
+                    יפן
+                </label>
+            </div>
+
+            <div id="destinationPreview" class="destinationPreviewContainer hidden">
+                <img id="destinationImg" src="" alt="תמונת יעד נבחר">
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <label>אטרקציות וחוויות שתרצה לשלב (רשות):</label>
+            <div class="attractionsGrid">
+
+                <div class="attractionCard">
+                    <label for="attract1">
+                        <img id="imgAttract1" src="Images/pizzaItaly.jpg" alt="סיורי אוכל וטעימות" class="attractionImg dimmed">
+                        <span>סיורי אוכל וטעימות</span>
+                        <input type="checkbox" id="attract1" name="attractions" value="סיורי אוכל וטעימות" onchange="toggleAttractionImage('attract1', 'imgAttract1')">
+                    </label>
+                </div>
+
+                <div class="attractionCard">
+                    <label for="attract2">
+                        <img id="imgAttract2" src="Images/nature.jpg" alt="מסלולי טבע ונופים" class="attractionImg dimmed">
+                        <span>מסלולי טבע ונופים</span>
+                        <input type="checkbox" id="attract2" name="attractions" value="מסלולי טבע ונופים" onchange="toggleAttractionImage('attract2', 'imgAttract2')">
+                    </label>
+                </div>
+
+                <div class="attractionCard">
+                    <label for="attract3">
+                        <img id="imgAttract3" src="Images/historyCastel.jpg" alt="אתרים היסטוריים וטירות" class="attractionImg dimmed">
+                        <span>אתרים היסטוריים</span>
+                        <input type="checkbox" id="attract3" name="attractions" value="אתרים היסטוריים וטירות" onchange="toggleAttractionImage('attract3', 'imgAttract3')">
+                    </label>
+                </div>
+
+                <div class="attractionCard">
+                    <label for="attract4">
+                        <img id="imgAttract4" src="Images/beachTh.jpg" alt="חופים ושיט" class="attractionImg dimmed">
+                        <span>חופים ושיט</span>
+                        <input type="checkbox" id="attract4" name="attractions" value="חופים ושיט" onchange="toggleAttractionImage('attract4', 'imgAttract4')">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" id="submitBtn" disabled>אשר חבילה</button>
+    </form>
+</main>
+
+<div id="summaryModal" class="modal hidden">
+    <div class="modalContent">
+        <span class="closeBtn" onclick="closeSummaryModal()">×</span>
+        <h3>סיכום החבילה שלך</h3>
+        <p id="modalText"></p>
+        <button type="button" id="modalOkBtn" onclick="closeSummaryModal()">סגור</button>
+    </div>
+</div>
+
+<footer>
+    <nav class="site-footer">
+        <ul>
+            <li><a href="index.html">דף הבית</a></li>
+            <li><a href="Italy.html">דרום איטליה</a></li>
+            <li><a href="thailand.html">תאילנד</a></li>
+            <li><a href="about.html">אודות</a></li>
+            <li><a href="contactUs.html">צור קשר</a></li>
+            <li><a href="sitemap.html">מפת האתר</a></li>
+            <li><a href="interactive.html" >טיול בהתאמה</a></li>
+        </ul>
+    </nav>
+</footer>
+
+<script src="jScripts/interactive.js"></script>
+</body>
+</html>
